@@ -1,0 +1,2427 @@
+{
+  "stage": 2,
+  "evaluation_backend": "built_in_exact_BIO_metrics",
+  "dataset": {
+    "train_sentences": 840,
+    "validation_sentences": 180,
+    "test_sentences": 180,
+    "train_tokens": 8042,
+    "validation_tokens": 1756,
+    "test_tokens": 1684
+  },
+  "configurations": {
+    "word_only": {
+      "features": {
+        "window_size": 2,
+        "weighting": {
+          "logistic_regression": "tfidf",
+          "naive_bayes": "count"
+        },
+        "character_ngrams": null,
+        "feature_count": 2506
+      },
+      "models": {
+        "logistic_regression": {
+          "implementation": "from_scratch_numpy_binary",
+          "iterations": 600,
+          "final_log_loss": 0.022341199813384553,
+          "parameters": 2507
+        },
+        "naive_bayes": {
+          "implementation": "from_scratch_numpy_multiclass",
+          "alpha": 1.0,
+          "classes": [
+            "ACCOUNT_NUMBER",
+            "ADDRESS",
+            "EMAIL",
+            "FINANCIAL_INFORMATION",
+            "LOCATION",
+            "ORGANIZATION",
+            "PERSON",
+            "PHONE_NUMBER"
+          ],
+          "parameters": 20048
+        }
+      },
+      "training_seconds": 0.5963991000025999,
+      "validation": {
+        "overall": {
+          "token_level": {
+            "precision": 0.9919728989994167,
+            "recall": 0.9872549019607844,
+            "macro_f1": 0.9892174527468645,
+            "weighted_f1": 0.9970998105166671,
+            "accuracy": 0.9971526195899773
+          },
+          "per_category_f1": {
+            "ACCOUNT_NUMBER": 0.9690721649484536,
+            "ADDRESS": 1.0,
+            "EMAIL": 1.0,
+            "FINANCIAL_INFORMATION": 1.0,
+            "LOCATION": 1.0,
+            "ORGANIZATION": 1.0,
+            "PERSON": 1.0,
+            "PHONE_NUMBER": 0.9818181818181818
+          },
+          "exact_span": {
+            "precision": 0.9882005899705014,
+            "recall": 0.9940652818991098,
+            "f1": 0.9911242603550297,
+            "correct": 335,
+            "predicted": 339,
+            "gold": 337
+          },
+          "confusion_matrix": {
+            "labels": [
+              "O",
+              "ACCOUNT_NUMBER",
+              "ADDRESS",
+              "EMAIL",
+              "FINANCIAL_INFORMATION",
+              "LOCATION",
+              "ORGANIZATION",
+              "PERSON",
+              "PHONE_NUMBER"
+            ],
+            "matrix": [
+              [
+                902,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                47,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                3
+              ],
+              [
+                0,
+                0,
+                277,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                99,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                68,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                42,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                97,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                140,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                81
+              ]
+            ]
+          }
+        },
+        "by_group": {
+          "banglish": {
+            "token_level": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "macro_f1": 1.0,
+              "weighted_f1": 1.0,
+              "accuracy": 1.0
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 1.0,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 1.0,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "correct": 110,
+              "predicted": 110,
+              "gold": 110
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  312,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  20,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  57,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  33,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  24,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  16,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  19,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  40,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  29
+                ]
+              ]
+            }
+          },
+          "clean": {
+            "token_level": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "macro_f1": 1.0,
+              "weighted_f1": 1.0,
+              "accuracy": 1.0
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 1.0,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 1.0,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "correct": 122,
+              "predicted": 122,
+              "gold": 122
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  379,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  144,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  39,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  28,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  11,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  42,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  54,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  11
+                ]
+              ]
+            }
+          },
+          "noisy": {
+            "token_level": {
+              "precision": 0.9715937657114128,
+              "recall": 0.9668174962292608,
+              "macro_f1": 0.968105912441703,
+              "weighted_f1": 0.9894722284950048,
+              "accuracy": 0.9897330595482546
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 0.9142857142857143,
+              "ADDRESS": 1.0,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 1.0,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 0.9647058823529412
+            },
+            "exact_span": {
+              "precision": 0.9626168224299065,
+              "recall": 0.9809523809523809,
+              "f1": 0.9716981132075471,
+              "correct": 103,
+              "predicted": 107,
+              "gold": 105
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  211,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  16,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  3
+                ],
+                [
+                  0,
+                  0,
+                  76,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  27,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  16,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  36,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  46,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  41
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "test": {
+        "overall": {
+          "token_level": {
+            "precision": 0.9971075908922745,
+            "recall": 0.9947572611932474,
+            "macro_f1": 0.9958747135217725,
+            "weighted_f1": 0.9988061819415738,
+            "accuracy": 0.998812351543943
+          },
+          "per_category_f1": {
+            "ACCOUNT_NUMBER": 0.98989898989899,
+            "ADDRESS": 1.0,
+            "EMAIL": 1.0,
+            "FINANCIAL_INFORMATION": 1.0,
+            "LOCATION": 1.0,
+            "ORGANIZATION": 1.0,
+            "PERSON": 1.0,
+            "PHONE_NUMBER": 0.9935483870967742
+          },
+          "exact_span": {
+            "precision": 0.9942196531791907,
+            "recall": 0.9971014492753624,
+            "f1": 0.9956584659913169,
+            "correct": 344,
+            "predicted": 346,
+            "gold": 345
+          },
+          "confusion_matrix": {
+            "labels": [
+              "O",
+              "ACCOUNT_NUMBER",
+              "ADDRESS",
+              "EMAIL",
+              "FINANCIAL_INFORMATION",
+              "LOCATION",
+              "ORGANIZATION",
+              "PERSON",
+              "PHONE_NUMBER"
+            ],
+            "matrix": [
+              [
+                880,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                49,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1
+              ],
+              [
+                0,
+                0,
+                189,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                153,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                66,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                32,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                101,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                136,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                77
+              ]
+            ]
+          }
+        },
+        "by_group": {
+          "banglish": {
+            "token_level": {
+              "precision": 0.9920634920634921,
+              "recall": 0.9892857142857143,
+              "macro_f1": 0.9904605263157895,
+              "weighted_f1": 0.9964070891514499,
+              "accuracy": 0.9964285714285714
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 0.9787234042553191,
+              "ADDRESS": 1.0,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 1.0,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 0.9803921568627451
+            },
+            "exact_span": {
+              "precision": 0.9823008849557522,
+              "recall": 0.9910714285714286,
+              "f1": 0.9866666666666667,
+              "correct": 111,
+              "predicted": 113,
+              "gold": 112
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  295,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  1
+                ],
+                [
+                  0,
+                  0,
+                  61,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  54,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  9,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  21,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  48,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  25
+                ]
+              ]
+            }
+          },
+          "clean": {
+            "token_level": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "macro_f1": 1.0,
+              "weighted_f1": 1.0,
+              "accuracy": 1.0
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 1.0,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 1.0,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "correct": 123,
+              "predicted": 123,
+              "gold": 123
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  372,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  9,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  83,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  66,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  12,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  35,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  52,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  19
+                ]
+              ]
+            }
+          },
+          "noisy": {
+            "token_level": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "macro_f1": 1.0,
+              "weighted_f1": 1.0,
+              "accuracy": 1.0
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 1.0,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 1.0,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "correct": 110,
+              "predicted": 110,
+              "gold": 110
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  213,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  17,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  45,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  33,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  20,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  11,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  45,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  36,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  33
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "word_plus_char_ngrams": {
+      "features": {
+        "window_size": 2,
+        "weighting": {
+          "logistic_regression": "tfidf",
+          "naive_bayes": "count"
+        },
+        "character_ngrams": [
+          3,
+          4
+        ],
+        "feature_count": 5006
+      },
+      "models": {
+        "logistic_regression": {
+          "implementation": "from_scratch_numpy_binary",
+          "iterations": 600,
+          "final_log_loss": 0.008121527691809334,
+          "parameters": 5007
+        },
+        "naive_bayes": {
+          "implementation": "from_scratch_numpy_multiclass",
+          "alpha": 1.0,
+          "classes": [
+            "ACCOUNT_NUMBER",
+            "ADDRESS",
+            "EMAIL",
+            "FINANCIAL_INFORMATION",
+            "LOCATION",
+            "ORGANIZATION",
+            "PERSON",
+            "PHONE_NUMBER"
+          ],
+          "parameters": 40048
+        }
+      },
+      "training_seconds": 1.1313246999925468,
+      "validation": {
+        "overall": {
+          "token_level": {
+            "precision": 0.9882997952464169,
+            "recall": 0.9882144347100542,
+            "macro_f1": 0.9877243311895102,
+            "weighted_f1": 0.9954460486775619,
+            "accuracy": 0.9954441913439636
+          },
+          "per_category_f1": {
+            "ACCOUNT_NUMBER": 0.9795918367346939,
+            "ADDRESS": 0.9927272727272727,
+            "EMAIL": 1.0,
+            "FINANCIAL_INFORMATION": 1.0,
+            "LOCATION": 0.9545454545454545,
+            "ORGANIZATION": 1.0,
+            "PERSON": 1.0,
+            "PHONE_NUMBER": 0.9878048780487805
+          },
+          "exact_span": {
+            "precision": 0.9622093023255814,
+            "recall": 0.9821958456973294,
+            "f1": 0.9720998531571219,
+            "correct": 331,
+            "predicted": 344,
+            "gold": 337
+          },
+          "confusion_matrix": {
+            "labels": [
+              "O",
+              "ACCOUNT_NUMBER",
+              "ADDRESS",
+              "EMAIL",
+              "FINANCIAL_INFORMATION",
+              "LOCATION",
+              "ORGANIZATION",
+              "PERSON",
+              "PHONE_NUMBER"
+            ],
+            "matrix": [
+              [
+                902,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                48,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                273,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                99,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                68,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                42,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                97,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                140,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                81
+              ]
+            ]
+          }
+        },
+        "by_group": {
+          "banglish": {
+            "token_level": {
+              "precision": 0.9963235294117647,
+              "recall": 0.9987244897959183,
+              "macro_f1": 0.9974617307091533,
+              "weighted_f1": 0.9981999943199569,
+              "accuracy": 0.9981818181818182
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 0.9911504424778761,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 0.9696969696969697,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 0.9819819819819819,
+              "recall": 0.990909090909091,
+              "f1": 0.9864253393665158,
+              "correct": 109,
+              "predicted": 111,
+              "gold": 110
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  312,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  20,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  56,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  33,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  24,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  16,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  19,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  40,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  29
+                ]
+              ]
+            }
+          },
+          "clean": {
+            "token_level": {
+              "precision": 0.9901960784313725,
+              "recall": 0.9990512333965844,
+              "macro_f1": 0.994174166340594,
+              "weighted_f1": 0.997333489582209,
+              "accuracy": 0.9972183588317107
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 0.993006993006993,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 0.9166666666666666,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 0.967741935483871,
+              "recall": 0.9836065573770492,
+              "f1": 0.975609756097561,
+              "correct": 120,
+              "predicted": 124,
+              "gold": 122
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  379,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  11,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  142,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  39,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  28,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  11,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  42,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  54,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  11
+                ]
+              ]
+            }
+          },
+          "noisy": {
+            "token_level": {
+              "precision": 0.9727357609710552,
+              "recall": 0.9756726511944729,
+              "macro_f1": 0.972785859840518,
+              "weighted_f1": 0.9897160827711361,
+              "accuracy": 0.9897330595482546
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 0.9444444444444444,
+              "ADDRESS": 0.9933774834437086,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 0.967741935483871,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 0.9761904761904763
+            },
+            "exact_span": {
+              "precision": 0.9357798165137615,
+              "recall": 0.9714285714285714,
+              "f1": 0.9532710280373832,
+              "correct": 102,
+              "predicted": 109,
+              "gold": 105
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  211,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  17,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  2
+                ],
+                [
+                  0,
+                  0,
+                  75,
+                  0,
+                  0,
+                  1,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  27,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  16,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  15,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  36,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  46,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  41
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "test": {
+        "overall": {
+          "token_level": {
+            "precision": 0.9932773109243698,
+            "recall": 0.998520162782094,
+            "macro_f1": 0.9956855932876915,
+            "weighted_f1": 0.9976815525024975,
+            "accuracy": 0.997624703087886
+          },
+          "per_category_f1": {
+            "ACCOUNT_NUMBER": 1.0,
+            "ADDRESS": 0.9893048128342246,
+            "EMAIL": 1.0,
+            "FINANCIAL_INFORMATION": 1.0,
+            "LOCATION": 0.9411764705882353,
+            "ORGANIZATION": 1.0,
+            "PERSON": 1.0,
+            "PHONE_NUMBER": 1.0
+          },
+          "exact_span": {
+            "precision": 0.9770773638968482,
+            "recall": 0.9884057971014493,
+            "f1": 0.9827089337175792,
+            "correct": 341,
+            "predicted": 349,
+            "gold": 345
+          },
+          "confusion_matrix": {
+            "labels": [
+              "O",
+              "ACCOUNT_NUMBER",
+              "ADDRESS",
+              "EMAIL",
+              "FINANCIAL_INFORMATION",
+              "LOCATION",
+              "ORGANIZATION",
+              "PERSON",
+              "PHONE_NUMBER"
+            ],
+            "matrix": [
+              [
+                880,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                50,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                185,
+                0,
+                0,
+                4,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                153,
+                0,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                66,
+                0,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                32,
+                0,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                101,
+                0,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                136,
+                0
+              ],
+              [
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                77
+              ]
+            ]
+          }
+        },
+        "by_group": {
+          "banglish": {
+            "token_level": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "macro_f1": 1.0,
+              "weighted_f1": 1.0,
+              "accuracy": 1.0
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 1.0,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 1.0,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 1.0,
+              "recall": 1.0,
+              "f1": 1.0,
+              "correct": 112,
+              "predicted": 112,
+              "gold": 112
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  295,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  24,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  61,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  54,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  9,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  21,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  48,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  25
+                ]
+              ]
+            }
+          },
+          "clean": {
+            "token_level": {
+              "precision": 0.9903846153846154,
+              "recall": 0.9982394366197183,
+              "macro_f1": 0.9938988095238095,
+              "weighted_f1": 0.9971222766304734,
+              "accuracy": 0.9970193740685543
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 0.9878048780487805,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 0.923076923076923,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 0.968,
+              "recall": 0.983739837398374,
+              "f1": 0.9758064516129032,
+              "correct": 121,
+              "predicted": 125,
+              "gold": 123
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  372,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  9,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  81,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  66,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  23,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  12,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  35,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  52,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  19
+                ]
+              ]
+            }
+          },
+          "noisy": {
+            "token_level": {
+              "precision": 0.9903846153846154,
+              "recall": 0.9965277777777778,
+              "macro_f1": 0.9930059523809524,
+              "weighted_f1": 0.9957058761694523,
+              "accuracy": 0.9955849889624724
+            },
+            "per_category_f1": {
+              "ACCOUNT_NUMBER": 1.0,
+              "ADDRESS": 0.9772727272727273,
+              "EMAIL": 1.0,
+              "FINANCIAL_INFORMATION": 1.0,
+              "LOCATION": 0.9166666666666666,
+              "ORGANIZATION": 1.0,
+              "PERSON": 1.0,
+              "PHONE_NUMBER": 1.0
+            },
+            "exact_span": {
+              "precision": 0.9642857142857143,
+              "recall": 0.9818181818181818,
+              "f1": 0.972972972972973,
+              "correct": 108,
+              "predicted": 112,
+              "gold": 110
+            },
+            "confusion_matrix": {
+              "labels": [
+                "O",
+                "ACCOUNT_NUMBER",
+                "ADDRESS",
+                "EMAIL",
+                "FINANCIAL_INFORMATION",
+                "LOCATION",
+                "ORGANIZATION",
+                "PERSON",
+                "PHONE_NUMBER"
+              ],
+              "matrix": [
+                [
+                  213,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  17,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  43,
+                  0,
+                  0,
+                  2,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  33,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  20,
+                  0,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  11,
+                  0,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  45,
+                  0,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  36,
+                  0
+                ],
+                [
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  0,
+                  33
+                ]
+              ]
+            }
+          }
+        }
+      }
+    }
+  },
+  "sklearn_validation": {
+    "matrix_config": "word_plus_char_ngrams",
+    "logistic_regression_binary": {
+      "f1_average": "positive_class_PII",
+      "scratch": {
+        "accuracy": 1.0,
+        "f1": 1.0
+      },
+      "sklearn": {
+        "accuracy": 1.0,
+        "f1": 1.0
+      },
+      "absolute_difference": {
+        "accuracy": 0.0,
+        "f1": 0.0
+      }
+    },
+    "naive_bayes_category": {
+      "f1_average": "macro_over_PII_categories",
+      "scratch": {
+        "accuracy": 0.9950248756218906,
+        "f1": 0.9913101604278075
+      },
+      "sklearn": {
+        "accuracy": 0.9950248756218906,
+        "f1": 0.9913101604278075
+      },
+      "absolute_difference": {
+        "accuracy": 0.0,
+        "f1": 0.0
+      }
+    }
+  },
+  "structured_category_ablation": {
+    "categories": [
+      "PHONE_NUMBER",
+      "EMAIL",
+      "ACCOUNT_NUMBER",
+      "FINANCIAL_INFORMATION"
+    ],
+    "per_category": {
+      "PHONE_NUMBER": {
+        "word_only_f1": 0.9935483870967742,
+        "word_plus_char_f1": 1.0,
+        "delta": 0.006451612903225823
+      },
+      "EMAIL": {
+        "word_only_f1": 1.0,
+        "word_plus_char_f1": 1.0,
+        "delta": 0.0
+      },
+      "ACCOUNT_NUMBER": {
+        "word_only_f1": 0.98989898989899,
+        "word_plus_char_f1": 1.0,
+        "delta": 0.010101010101010055
+      },
+      "FINANCIAL_INFORMATION": {
+        "word_only_f1": 1.0,
+        "word_plus_char_f1": 1.0,
+        "delta": 0.0
+      }
+    },
+    "macro_f1": {
+      "word_only": 0.9958618442489411,
+      "word_plus_char_ngrams": 1.0,
+      "delta": 0.004138155751058914
+    }
+  }
+}
