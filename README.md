@@ -7,6 +7,9 @@ PrivacyGuard is an NLP-based privacy protection system that detects, classifies,
 - Stage 2: custom window BoW/TF-IDF and character n-gram features, binary
   Logistic Regression and multiclass Naive Bayes implemented from scratch,
   BIO reconstruction, and shared token/span evaluation.
+- Stage 3: NumPy Skip-gram embeddings, mean and TF-IDF-weighted window
+  embeddings, optional pretrained Gensim comparison, and embedding-based
+  Logistic Regression evaluation through the unchanged Stage 2 pipeline.
 
 ## Run Stage 2
 
@@ -18,3 +21,14 @@ PrivacyGuard is an NLP-based privacy protection system that detects, classifies,
 
 The complete machine-readable evaluation is written to
 `results/stage2_classical_results.json`.
+
+## Run Stage 3
+
+```powershell
+python scripts/train_embeddings.py
+```
+
+The complete machine-readable evaluation is written to
+`results/stage3_embedding_results.json`. Pretrained Gensim vectors are
+optional; a failed download is reported and the scratch-embedding arms still
+finish.
